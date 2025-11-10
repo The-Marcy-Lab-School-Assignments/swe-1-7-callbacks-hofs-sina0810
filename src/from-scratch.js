@@ -42,18 +42,32 @@ const result = myForEach(myNames, (name) => {
 
 
 const myMap = (arr, transform) => {
-    const myNums = [];
-    arr.forEach((words => transform(words)))
-    words.push(myNums)
+    return arr.map(transform)
  };
 
 
 const myFilter = (arr, test) => {
-  
+  let newArr = []
+ for (let i =0; i < arr.length; i++){
+  let word = arr[i]
+  if (test(word)){
+    newArr.push(word)  }
+ }
+   return newArr
 
  };
 
-const myFind = () => { };
+const myFind = (arr, test) => {
+
+  for (let i =0; i < arr.length; i++){
+  let word = arr[i];
+    if(test(word)){
+       return word
+  } else {
+    }
+  }
+      return undefined
+};
 
 // Use Array.sort() and provide the correct callback sorting function:
 module.exports = {
